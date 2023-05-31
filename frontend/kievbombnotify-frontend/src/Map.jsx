@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import districtsData from './districtData.json'; // Import the districtsData file
+import kievData from './GeoJSON Files/Kiev.json'
 import 'leaflet/dist/leaflet.css'
 
 const Map = () => {
@@ -24,7 +25,7 @@ const Map = () => {
   return (
     <MapContainer center={initialPosition} zoom={initialZoom} style={{ height: '100%', width: '100%' }}>
       <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" />
-      <GeoJSON data={districtsData} style={geoJSONStyle} onEachFeature={onEachDistrict} />
+      <GeoJSON data={kievData} style={geoJSONStyle} onEachFeature={onEachDistrict} />
     </MapContainer>
   );
 };
