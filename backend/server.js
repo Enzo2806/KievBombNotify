@@ -16,4 +16,3 @@ const db = mongoose.connection
 
 // App is lsitening on port 8080
 app.listen(8080, ()=> {console.log("Listening PORT:8080")})
-
