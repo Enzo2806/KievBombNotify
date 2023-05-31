@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const District = require("../models/District");
+const verifyToken = require("../verifyJWT");
 
 // create a route for this endpoint /get-districts
-router.get("/get-districts", async (req,res) => {
+router.get("/get-districts",verifyToken, async (req,res) => {
 
     try{
         // this gets all districts
