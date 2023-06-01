@@ -16,15 +16,17 @@ const userSchema = new mongoose.Schema({
     },
     flagged:{
         type: Boolean,
-        require:true
+        default: false
     },
     amountOfRequestToday:{
         type: Number,
-        required: true
+        min: 0,
+        max: 5,
+        default: 0
     },
     lastRequestTime:{
         type: Date,
-        default: Date.now
+        default: null
     }
 
 })
