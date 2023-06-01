@@ -24,17 +24,37 @@ const Map = () => {
     color: 'black',
     fillOpacity: 0.1,
   };
-  const cityStyle = {
-    fillColor: 'white', // Set the default fill color for city
+  const districtLowBombStyle = {
+    fillColor: 'red', // Set the default fill color for city
     weight: 1,
     color: 'white',
     fillOpacity: 0.1,
+  };
+  const districtMediumBombStyle = {
+    fillColor: 'red', // Set the default fill color for city
+    weight: 1,
+    color: 'white',
+    fillOpacity: 0.3,
+  };
+  const districtHighBombStyle = {
+    fillColor: 'red', // Set the default fill color for city
+    weight: 1,
+    color: 'white',
+    fillOpacity: 0.5,
+  };
+  const districtVeryHighBombStyle = {
+    fillColor: 'red', // Set the default fill color for city
+    weight: 1,
+    color: 'white',
+    fillOpacity: 0.7,
   };
 
   const onEachDistrict = (feature, layer) => {
     // Bind a popup with district information to each district layer
     if (feature.properties && feature.properties.name) {
       layer.bindPopup(feature.properties.name);
+      // Write the district name at the center of each district
+      
     }
   };
 
@@ -42,15 +62,15 @@ const Map = () => {
     <MapContainer center={initialPosition} zoom={initialZoom} style={{ height: '100%', width: '100%' }}>
       <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png" />
         <GeoJSON data={obolon} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
-        <GeoJSON data={dnipro} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
-        <GeoJSON data={darnytsia} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
-        <GeoJSON data={podil} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
+        <GeoJSON data={dnipro} style={districtMediumBombStyle} onEachFeature={onEachDistrict} />
+        <GeoJSON data={darnytsia} style={districtHighBombStyle} onEachFeature={onEachDistrict} />
+        <GeoJSON data={podil} style={districtVeryHighBombStyle} onEachFeature={onEachDistrict} />
         <GeoJSON data={syvatoshyn} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
         <GeoJSON data={desna} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
         <GeoJSON data={shevchenko} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
-        <GeoJSON data={solomyansk} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
-        <GeoJSON data={pechersk} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
-        <GeoJSON data={holosiiv} style={districtDefaultStyle} onEachFeature={onEachDistrict} />
+        <GeoJSON data={solomyansk} style={districtHighBombStyle} onEachFeature={onEachDistrict} />
+        <GeoJSON data={pechersk} style={districtLowBombStyle} onEachFeature={onEachDistrict} />
+        <GeoJSON data={holosiiv} style={districtVeryHighBombStyle} onEachFeature={onEachDistrict} />
     </MapContainer>
   );
 };

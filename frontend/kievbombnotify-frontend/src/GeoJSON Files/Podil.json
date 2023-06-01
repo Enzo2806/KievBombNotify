@@ -1,6 +1,8 @@
 {
     "type": "Feature",
-    "properties": {},
+    "properties": {
+      "name": "Podil"
+    },
     "geometry": {
       "coordinates": [
         [

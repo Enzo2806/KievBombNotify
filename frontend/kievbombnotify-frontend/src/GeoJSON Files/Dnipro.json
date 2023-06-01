@@ -3,7 +3,9 @@
     "features": [
     {
         "type": "Feature",
-        "properties": {},
+        "properties": {
+            "name": "Dnipro"
+          },
         "geometry": {
             "coordinates": [
                 [
@@ -371,7 +373,9 @@
         {
         
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Dnipro"
+              },
             "geometry": {
             "coordinates": [
                 [
@@ -954,7 +958,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Dnipro"
+              },
             "geometry": {
               "coordinates": [
                 [
@@ -1081,7 +1087,9 @@
           },
           {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Dnipro"
+              },
             "geometry": {
               "coordinates": [
                 [

@@ -3,7 +3,9 @@
     "features": [
     {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Holosiiv"
+              },
             "geometry": {
             "coordinates": [
                 [
@@ -2890,7 +2892,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Holosiiv"
+              },
             "geometry": {
               "coordinates": [
                 [
@@ -3357,7 +3361,9 @@
           },
           {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Holosiiv"
+              },
             "geometry": {
               "coordinates": [
                 [
@@ -3660,7 +3666,9 @@
           },
           {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "name": "Holosiiv"
+              },
             "geometry": {
               "coordinates": [
                 [
