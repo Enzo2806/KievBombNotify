@@ -6,7 +6,7 @@ const Home = () => {
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <div style={{ width: '600px', height: '400px' }}>
         <h1>Kiev Map</h1>
-        <div className="map-container" style={{ height: '100%', width: '100%' }}>
+        <div style={{ height: '100%', width: '100%'}}>
           <Map />
         </div>
         {/* Other content */}
