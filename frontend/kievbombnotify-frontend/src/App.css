@@ -42,3 +42,41 @@ button{
   cursor: pointer;
   color: #70AE80;
 }
+
+.container {
+  display: flex;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+}
+
+.map-wrapper {
+  height: 100%;
+  width: 100%;
+}
