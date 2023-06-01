@@ -1,0 +1,99 @@
+/* [id^="path"]:hover {
+
+    stroke: aqua;
+} */
+
+.cls-1,
+.cls-12 {
+    fill: none;
+}
+
+.cls-2 {
+    fill: rgba(255, 128, 128, 0);
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5,
+.cls-6,
+.cls-7,
+.cls-8,
+.cls-9 {
+    stroke: black;
+    stroke-linejoin: round;
+}
+
+.cls-10:hover,
+.cls-11:hover,
+.cls-12:hover,
+.cls-2:hover,
+.cls-3:hover,
+.cls-4:hover,
+.cls-5:hover,
+.cls-6:hover,
+.cls-7:hover,
+.cls-8:hover,
+.cls-9:hover {
+    stroke: red;
+    stroke-linejoin: round;
+}
+
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-13,
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5,
+.cls-6,
+.cls-7,
+.cls-8,
+.cls-9 {
+    fill-rule: evenodd;
+}
+
+.cls-3 {
+    fill: rgba(239, 247, 248, 0);
+}
+
+.cls-4 {
+    fill: rgba(244, 255, 244, 0);
+}
+
+.cls-5 {
+    fill: rgba(255, 170, 170, 0);
+}
+
+.cls-6 {
+    fill: none;
+}
+
+.cls-7 {
+    fill: rgba(141, 211, 95, 0);
+}
+
+.cls-8 {
+    fill: none;
+}
+
+.cls-9 {
+    fill: rgba(255, 153, 85, 0);
+}
+
+.cls-10 {
+    fill: rgba(95, 188, 211, 0);
+}
+
+.cls-11 {
+    fill: rgba(255, 212, 42, 0);
+}
+
+.cls-13 {
+    fill: none;
+    stroke: #000;
+}
