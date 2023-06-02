@@ -3,6 +3,7 @@ import "./MapPage.css"
 import { KievMap } from '../components/KievMap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Status } from '../components/Status';
+import { Legend } from '../components/Legend';
 
 export function MapPage(props) {
     const location = useLocation();
@@ -14,7 +15,7 @@ export function MapPage(props) {
         e.preventDefault();
         navigate('/report');
     }
-
+    // Effects for showing the report thank you message
     useEffect(() => {
         const timer = setTimeout(() => {
             setReportMessage('');
@@ -41,20 +42,7 @@ export function MapPage(props) {
                         <h1 className='title'> Live Kiev Map</h1>
                     </div>
                     <KievMap />
-                    <div className='legend'>
-                        <div className="legend-item">
-                            <div className="legend-color" style={{ backgroundColor: '#FD585E', opacity: 1 }}></div>
-                            <div className="legend-label">Severe Possibility of Attack</div>
-                        </div>
-                        <div className="legend-item">
-                            <div className="legend-color" style={{ backgroundColor: '#F4B609', opacity: 1 }}></div>
-                            <div className="legend-label">High Possibility of Attack</div>
-                        </div>
-                        <div className="legend-item">
-                            <div className="legend-color" style={{ backgroundColor: '#242424', opacity: 1 }}></div>
-                            <div className="legend-label">Low Possibility of Attack</div>
-                        </div>
-                    </div>
+                    <Legend />
                 </div>
                 <div className="col report-container">
                     <h1 className='title'> District Status</h1>
