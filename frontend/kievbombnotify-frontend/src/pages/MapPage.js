@@ -45,7 +45,7 @@ export function MapPage(props) {
                     </div>
                     <div>
                         <div>
-                            <button className='report-button row' onClick={handleReportPress}>
+                            <button className='report-button' onClick={handleReportPress}>
                                 Report an Attack
                             </button>
                         </div>

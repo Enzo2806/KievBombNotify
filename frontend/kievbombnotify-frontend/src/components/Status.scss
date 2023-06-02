@@ -1,4 +1,11 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 510px;
+}
+
 .report {
+
     // display: flex;
     width: 250px;
     height: 80px;

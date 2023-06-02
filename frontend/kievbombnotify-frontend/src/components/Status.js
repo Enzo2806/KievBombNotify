@@ -13,7 +13,6 @@ export function Status(props) {
                         <h4>DANGER LEVEL:<span className={`${district.danger}`}> {district.danger}</span></h4>
                         <h4>REPORTS: {district.report}</h4>
                     </div>
-
                 </>
             ))}
         </div>
