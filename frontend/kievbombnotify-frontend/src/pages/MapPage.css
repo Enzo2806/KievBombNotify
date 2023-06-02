@@ -1,0 +1,21 @@
+.map-title{
+    /* ELements are horizontally stacked */
+    display: flex;
+    /* Elements are vertically centered */
+    align-items: center;
+}
+
+.title{
+    color: #303030;
+    display: flex;
+    justify-content: baseline;
+}
+
+#circle {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 25px;
+    background: #FD585E;
+    margin-right: 10px;
+  }

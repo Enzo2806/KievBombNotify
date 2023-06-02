@@ -6,7 +6,10 @@ export function MapPage(props) {
     return (
         <div>
             <div>
-                <h1>Map</h1>
+                <div className='map-title'> 
+                    <div id="circle"></div>
+                    <h1 className='title'> Live Kiev Map</h1>  
+                </div>
                 <KievMap />
             </div>
         </div>

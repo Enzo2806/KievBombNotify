@@ -1,27 +1,31 @@
-import React from 'react';
-import "./LoginPage.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import "./LoginPage.css"
 
-function LoginPage() {
-  return (
-    <div>
-      <h2 style={{ textAlign: 'center' }}>Login</h2>
-      <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <input
-          type="text"
-          placeholder="Username/Email"
-          style={{ marginBottom: '10px', padding: '5px' }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          style={{ marginBottom: '10px', padding: '5px' }}
-        />
-        <button type="submit" style={{ padding: '10px 20px', backgroundColor: 'blue', color: 'white' }}>
-          Log in
-        </button>
-      </form>
-    </div>
-  );
+export const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        navigate('/map');
+    }
+
+    return(
+        <div className='auth-form-container'> 
+            <h2>Login</h2>
+            <form className="login-form" onSubmit={handleSubmit}>
+                <label htmlFor="username">Username</label>
+                <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" name="username" placeholder="Username" id="username"/>
+
+                <label htmlFor="password">Password</label>
+                <input value={password} onChange={(p) => setPassword(p.target.value)} type="password" name="password" placeholder="Password" id="password"/>
+
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    )
 }
 
-export default LoginPage;
+export default Login;
