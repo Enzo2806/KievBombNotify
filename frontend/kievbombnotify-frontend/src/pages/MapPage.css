@@ -41,3 +41,14 @@ margin-right: 5px;
 margin-left: 20px;
 }
   
+.report-button{
+    background-color: #FD585E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}

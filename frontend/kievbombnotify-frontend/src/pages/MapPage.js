@@ -1,10 +1,19 @@
 import React from 'react';
 import "./MapPage.css"
 import { KievMap } from '../components/KievMap';
+import { useNavigate } from 'react-router-dom';
+
 
 export function MapPage(props) {
+    const navigate = useNavigate();
+    const handleReportPress = (e) =>{
+        e.preventDefault();
+        navigate('/report');
+    }
+
+
     return (
-        <div>
+        <div style={{display: 'flex'}}>
             <div>
                 <div className='map-title'> 
                     <div id="circle"></div>
@@ -24,6 +33,14 @@ export function MapPage(props) {
                             <div className="legend-color" style={{ backgroundColor: '#242424', opacity: 1 }}></div>
                             <div className="legend-label">Low Possibility of Attack</div>
                         </div>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <button className='report-button' onClick={handleReportPress}>
+                        Report an Attack
+                    </button>
                 </div>
             </div>
         </div>

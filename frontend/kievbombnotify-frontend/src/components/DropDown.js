@@ -5,9 +5,17 @@ import "./DropDown.css";
 
 export function DropDown(props) {
 
+    const styles = {
+        menu: ({ width, ...css }) => ({
+            ...css,
+            width: "max-content",
+            minWidth: "100%"
+       }),
+    }
+
     return (
         <div>
-            <Select className="select" options={districts} />
+            <Select className="select" options={districts} styles={styles}/>
         </div>
     );
 }
