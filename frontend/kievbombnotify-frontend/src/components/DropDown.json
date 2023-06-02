@@ -2,19 +2,19 @@
     {
         "value": "Podilskyi",
         "label": "Podilskyi District",
-        "danger": "low",
+        "danger": "LOW",
         "report": "3"
     },
     {
         "value": "Shevchenkivskyi",
         "label": "Shevchenkivskyi District",
-        "danger": "low",
+        "danger": "SEVER",
         "report": "3"
     },
     {
         "value": "Pecherskyi",
         "label": "Pecherskyi District",
-        "danger": "low",
+        "danger": "MEDIUM",
         "report": "3"
     },
     {
