@@ -1,62 +1,62 @@
 [
     {
-        "value": "Podilskyi",
-        "label": "Podilskyi District",
-        "danger": "LOW",
-        "report": "3"
+      "value": "Darnytskyi",
+      "label": "Darnytskyi District",
+      "danger": "low",
+      "report": "0"
     },
     {
-        "value": "Shevchenkivskyi",
-        "label": "Shevchenkivskyi District",
-        "danger": "SEVER",
-        "report": "3"
+      "value": "Desnianskyi",
+      "label": "Desnianskyi District",
+      "danger": "low",
+      "report": "0"
     },
     {
-        "value": "Pecherskyi",
-        "label": "Pecherskyi District",
-        "danger": "MEDIUM",
-        "report": "3"
+      "value": "Dniprovskyi",
+      "label": "Dniprovskyi District",
+      "danger": "low",
+      "report": "0"
     },
     {
-        "value": "Holosiivskyi",
-        "label": "Holosiivskyi District",
-        "danger": "low",
-        "report": "3"
+      "value": "Holosiivskyi",
+      "label": "Holosiivskyi District",
+      "danger": "low",
+      "report": "0"
     },
     {
-        "value": "Obolonskyi",
-        "label": "Obolonskyi District",
-        "danger": "low",
-        "report": "3"
+      "value": "Obolonskyi",
+      "label": "Obolonskyi District",
+      "danger": "low",
+      "report": "0"
     },
     {
-        "value": "Darnytskyi",
-        "label": "Darnytskyi District",
-        "danger": "low",
-        "report": "3"
+      "value": "Pecherskyi",
+      "label": "Pecherskyi District",
+      "danger": "MEDIUM",
+      "report": "3"
     },
     {
-        "value": "Desnianskyi",
-        "label": "Desnianskyi District",
-        "danger": "low",
-        "report": "3"
+      "value": "Podilskyi",
+      "label": "Podilskyi District",
+      "danger": "LOW",
+      "report": "0"
     },
     {
-        "value": "Solomianskyi",
-        "label": "Solomianskyi District",
-        "danger": "low",
-        "report": "3"
+      "value": "Shevchenkivskyi",
+      "label": "Shevchenkivskyi District",
+      "danger": "SEVER",
+      "report": "5"
     },
     {
-        "value": "Sviatoshynskyi",
-        "label": "Sviatoshynskyi District",
-        "danger": "low",
-        "report": "3"
+      "value": "Solomianskyi",
+      "label": "Solomianskyi District",
+      "danger": "low",
+      "report": "0"
     },
     {
-        "value": "Dniprovskyi",
-        "label": "Dniprovskyi District",
-        "danger": "low",
-        "report": "3"
+      "value": "Sviatoshynskyi",
+      "label": "Sviatoshynskyi District",
+      "danger": "low",
+      "report": "0"
     }
-]
+  ]

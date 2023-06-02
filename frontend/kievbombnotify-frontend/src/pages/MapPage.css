@@ -59,3 +59,25 @@
     width: 600px;
     height: 500px;
 }
+
+
+/* Message appear/disappear transisition */
+
+.message-container {
+    opacity: 0;
+    color: #FD585E;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .message-container.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .message-container.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  

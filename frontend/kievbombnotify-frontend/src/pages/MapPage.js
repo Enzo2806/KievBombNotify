@@ -1,21 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./MapPage.css"
 import { KievMap } from '../components/KievMap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Status } from '../components/Status';
 
 export function MapPage(props) {
+    const location = useLocation();
+    const [reportMessage, setReportMessage] = useState('');
+    const [showMessage, setShowMessage] = useState(false);
+
     const navigate = useNavigate();
     const handleReportPress = (e) => {
         e.preventDefault();
         navigate('/report');
     }
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setReportMessage('');
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        const incomingMessage = location?.state?.reportMessage;
+        if (incomingMessage) {
+            setReportMessage(incomingMessage);
+            setShowMessage(true);
+        }
+    }, [location]);
+
 
     return (
         <div className="container">
-
-
             <div style={{ display: 'flex' }}>
                 <div>
                     <div className='map-title'>
@@ -48,6 +66,10 @@ export function MapPage(props) {
                             <button className='report-button' onClick={handleReportPress}>
                                 Report an Attack
                             </button>
+                        </div>
+                        <div className={`message-container ${showMessage ? 'show' : ''}`}>
+                            {reportMessage && <p>{reportMessage}</p>}
+            
                         </div>
                     </div>
                 </div>
