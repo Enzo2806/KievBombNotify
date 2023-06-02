@@ -2,7 +2,7 @@ import React from 'react';
 import "./MapPage.css"
 import { KievMap } from '../components/KievMap';
 import { useNavigate } from 'react-router-dom';
-
+import { Status } from '../components/Status';
 
 export function MapPage(props) {
     const navigate = useNavigate();
@@ -36,8 +36,9 @@ export function MapPage(props) {
                 </div>
             </div>
             <div className="col report-container">
-                <div className="district-status row">
-
+                <h1 className='title'> District Status</h1>
+                <div className="district-status row d-flex">
+                    <Status />
                 </div>
                 <div>
                     <div>
