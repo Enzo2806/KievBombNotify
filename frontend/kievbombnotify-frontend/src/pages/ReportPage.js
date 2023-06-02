@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 export function ReportPage(props) {
 
     const navigate = useNavigate();
-    const handleReportPress = (e) =>{
+    const handleReportPress = (e) => {
         e.preventDefault();
-        navigate('/map');
+        navigate('/map', { state: { reportMessage: 'Thank you for reporting!' } });
     }
 
     return (

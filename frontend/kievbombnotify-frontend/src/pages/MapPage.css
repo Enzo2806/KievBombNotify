@@ -1,11 +1,11 @@
-.map-title{
+.map-title {
     /* ELements are horizontally stacked */
     display: flex;
     /* Elements are vertically centered */
     align-items: center;
 }
 
-.title{
+.title {
     color: #303030;
     display: flex;
     justify-content: baseline;
@@ -20,28 +20,8 @@
     margin-right: 10px;
 }
 
-.legend {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
-  }
 
-.legend-item {
-display: flex;
-align-items: center;
-margin-bottom: 5px;
-}
-
-.legend-color {
-width: 20px;
-height: 20px;
-margin-right: 5px;
-margin-left: 20px;
-}
-  
-.report-button{
+.report-button {
     background-color: #FD585E;
     color: white;
     border: none;
@@ -50,5 +30,34 @@ margin-left: 20px;
     margin-top: 20px;
     font-size: 16px;
     cursor: pointer;
-    width: 100%;
+    width: 60%;
+
 }
+
+.district-status {
+
+    width: 600px;
+    height: 500px;
+}
+
+
+/* Message appear/disappear transisition */
+
+.message-container {
+    opacity: 0;
+    color: #FD585E;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .message-container.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .message-container.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  

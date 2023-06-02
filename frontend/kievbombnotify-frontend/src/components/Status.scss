@@ -1,0 +1,27 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 510px;
+}
+
+.report {
+
+    // display: flex;
+    width: 250px;
+    height: 80px;
+    text-align: left;
+    border-bottom: 2px solid #000;
+    margin-bottom: 5px;
+
+    h4 {
+        margin: 5px;
+    }
+
+    .SEVER {
+        color: red;
+    }
+
+    .MEDIUM {
+        color: rgba(188, 174, 12, 0.893);
+    }
+}
