@@ -17,7 +17,7 @@ router.post("/login", async (req,res) => {
 
         // create and asign token
         const token = jwt.sign({_id: user.id}, "KBNteamSecret", {expiresIn:60*60*6})
-        res.header("auth-token", token).send(token)
+        res.header("auth-token", token).send({"token":token, "id": user.id})
 
     }catch(err){
         res.send(err)
