@@ -2,9 +2,9 @@ const router = require("express").Router();
 const User = require("../models/User")
 const Report = require("../models/Report")
 const District = require("../models/District")
+const verifyToken = require("../verifyJWT");
 
-
-router.post("/report/:district", async (req, res) => {
+router.post("/report/:district", verifyToken, async (req, res) => {
 
     // Simple check for a valid paramete
     const parameters = ["shevchenko","obolon","dnipro", "darnytsia", "holosiiv", "pechersk", "solomyansk", "svyatoshni", "podil"]
@@ -22,9 +22,11 @@ router.post("/report/:district", async (req, res) => {
 
     try{
         // INCREMENT USERS DAILY QUOTA
-
         const user = await User.findById(id)
-        await user.updateOne({$set:{amountOfRequestToday: user.amountOfRequestToday + 1}}, {upsert: true, new: true, runValidators: true, setDefaultsOnInsert: true})
+        // Increment daily request quota
+        await user.updateOne({$set:{amountOfRequestToday: user.amountOfRequestToday + 1, lastRequestTime: Date.now()}}, {upsert: true, new: true, runValidators: true, setDefaultsOnInsert: true})
+        // 
+
 
         // UPDATE THE DISTRICT INFORMATION
 
