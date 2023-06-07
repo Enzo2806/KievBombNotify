@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User")
 const Report = require("../models/Report")
 const District = require("../models/District")
-const verifyToken = require("../verifyJWT");
+const verifyToken = require("../jwt/verifyJWT");
 
 router.post("/report/:district", verifyToken, async (req, res) => {
 
@@ -17,7 +17,8 @@ router.post("/report/:district", verifyToken, async (req, res) => {
 
     // ID should be sent with the post request for us to find the user in the db and increment his daily report quota
     
-    const id = req.body.id
+    const id = req.header("id-token")
+    if(!id) return res.status(400).header("is-token-valid", false).send("Access Denied - No id-token header or it is empty")
 
 
     try{
@@ -45,8 +46,8 @@ router.post("/report/:district", verifyToken, async (req, res) => {
             // save the new district entry
             await district.save()
         }catch(err){
-            console.log(err)
-            res.status(400).send(err)
+
+            res.status(500).send(err)
 
         }
 
@@ -54,7 +55,7 @@ router.post("/report/:district", verifyToken, async (req, res) => {
 
     }catch(err){
 
-        res.status(400).send(err)
+        res.status(500).send(err)
 
     }
 
