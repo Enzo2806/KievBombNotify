@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const District = require("../models/District");
-const verifyToken = require("../verifyJWT");
+const verifyToken = require("../jwt/verifyJWT");
 
 // create a route for this endpoint /get-districts
 router.get("/get-districts",verifyToken, async (req,res) => {
@@ -12,7 +12,7 @@ router.get("/get-districts",verifyToken, async (req,res) => {
         res.status(200).send({"districts": districts})
     }catch(err){
         // send back an error if caught wioth a 400 status
-        res.status(400).send(err)
+        res.status(500).send(err)
     }
 
 })
