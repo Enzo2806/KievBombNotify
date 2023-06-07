@@ -7,6 +7,9 @@ const distRoutes = require("./routes/districtRoutes")
 const authRoutes = require("./routes/authRoutes")
 const reportRoutes = require("./routes/reportRoutes")
 
+const bcrypt = require("bcrypt")
+
+
 
 
 // CONNECT TO DB

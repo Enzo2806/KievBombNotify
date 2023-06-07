@@ -9,11 +9,12 @@ router.post("/login", async (req,res) => {
     try{
 
         // try finding user, if not return status 400 and an error message
+        
         const user = await User.findOne({"username": req.body.username})
         if (!user) return res.status(400).send("Wrong login or password")
 
         // try comparing passwords, if comparison failds return status 400 and error message
-        const validPass = req.body.password === user.password ? true : false
+        const validPass = await bcrypt.compare(req.body.password, user.password)
         if(!validPass) return res.status(400).send("Wrong login or password")
 
         // create and assign tokens
@@ -33,12 +34,24 @@ router.post("/login", async (req,res) => {
 
 })
 
-router.get("/refresh", refreshToken,(req, res) => {
+router.get("/refresh", refreshToken, async (req, res) => {
 
     try{
 
         const idToken = req.header("id-token")
         if(!idToken) return res.status(400).header("is-token-valid", false).send("Access Denied - No id-token header or it is empty")
+
+        try{
+
+            const user = await User.findById(idToken)
+            
+            if(!user || user === null) return res.status(400).send("Unsuccesfull - id-token is invalid")
+
+        }catch(err){
+
+            return res.status(500).send(err)
+
+        }
 
         // create and assign fresh token
         const authToken = getJwt(idToken, 15*60)

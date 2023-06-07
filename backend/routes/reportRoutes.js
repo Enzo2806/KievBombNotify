@@ -25,8 +25,16 @@ router.post("/report/:district", verifyToken, async (req, res) => {
         // INCREMENT USERS DAILY QUOTA
         const user = await User.findById(id)
         // Increment daily request quota
-        await user.updateOne({$set:{amountOfRequestToday: user.amountOfRequestToday + 1, lastRequestTime: Date.now()}}, {upsert: true, new: true, runValidators: true, setDefaultsOnInsert: true})
-        // 
+        try{
+            
+            await user.updateOne({$set:{amountOfRequestToday: user.amountOfRequestToday + 1, lastRequestTime: Date.now()}}, {upsert: true, new: true, runValidators: true, setDefaultsOnInsert: true})
+
+        }catch(err){
+            
+            return res.status(400).send("Unsuccesfull - id-token is probably invalid or 500")
+
+        }
+        //
 
 
         // UPDATE THE DISTRICT INFORMATION
@@ -47,7 +55,7 @@ router.post("/report/:district", verifyToken, async (req, res) => {
             await district.save()
         }catch(err){
 
-            res.status(500).send(err)
+            return res.status(500).send(err)
 
         }
 
@@ -55,7 +63,7 @@ router.post("/report/:district", verifyToken, async (req, res) => {
 
     }catch(err){
 
-        res.status(500).send(err)
+        return res.status(500).send(err)
 
     }
 
