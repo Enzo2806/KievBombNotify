@@ -4,7 +4,7 @@ const Report = require("../models/Report")
 const District = require("../models/District")
 const verifyToken = require("../jwt/verifyJWT");
 
-router.post("/report/:district", verifyToken, async (req, res) => {
+router.put("/report/:district", verifyToken, async (req, res) => {
 
     // Simple check for a valid paramete
     const parameters = ["shevchenko","obolon","dnipro", "darnytsia", "holosiiv", "pechersk", "solomyansk", "svyatoshni", "podil"]
@@ -30,8 +30,8 @@ router.post("/report/:district", verifyToken, async (req, res) => {
             await user.updateOne({$set:{amountOfRequestToday: user.amountOfRequestToday + 1, lastRequestTime: Date.now()}}, {upsert: true, new: true, runValidators: true, setDefaultsOnInsert: true})
 
         }catch(err){
-            
-            return res.status(400).send("Unsuccesfull - id-token is probably invalid or 500")
+
+            return res.status(400).send(err)
 
         }
         //
