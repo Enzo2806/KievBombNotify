@@ -10,7 +10,7 @@ const verifyToken = (req,res,next) => {
 
     try{
         // try verifying the token, if all good and no error thrown, next() is called which proceeds to execute the next middleware in the stack
-        const verified = jwt.verify(token, "KBNteamSecret")
+        const verified = jwt.verify(token, "auth-secret")
         next()
     }catch(err){
         // if there is an error send status 400 with a invalid token message
