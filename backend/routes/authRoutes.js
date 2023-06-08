@@ -18,8 +18,8 @@ router.post("/login", async (req,res) => {
         if(!validPass) return res.status(400).send("Wrong login or password")
 
         // create and assign tokens
-        const authToken = getJwt(user.id, 15*60)
-        const refreshToken = getJwt(user.id, 60*60*24*7) 
+        const authToken = getJwt(user.id, 15*60, "auth-secret")
+        const refreshToken = getJwt(user.id, 60*60*24*7, "refresh-secret") 
 
         // set them as a header and send a response
         res.status(200).set({
@@ -54,7 +54,7 @@ router.get("/refresh", refreshToken, async (req, res) => {
         }
 
         // create and assign fresh token
-        const authToken = getJwt(idToken, 15*60)
+        const authToken = getJwt(idToken, 15*60, "auth-secret")
 
         // set them as a header and send a response
         res.status(200).set({
